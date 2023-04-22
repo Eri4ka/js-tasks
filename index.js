@@ -53,10 +53,29 @@ function sum(arr) {
   let sum = 0;
 
   for (let i = 0; i < arr.length; i++) {
-    sum += arr[i]
+    sum += arr[i];
   }
 
   return sum;
 }
 
-console.log(sum(range(1, 10, 2)))
+// 2.1
+function reverseArray(arr) {
+  const reversedArray = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArray.push(arr[i]);
+  }
+  return reversedArray;
+}
+
+//2.2
+const arrayValue = [1, 2, 3, 4, 5];
+
+function reverseArrayInPlace(arr) {
+  const arrCopy = [...arr];
+  for (let i = 1; i <= arrCopy.length; i++) {
+    arr[i - 1] = arrCopy[arrCopy.length - i];
+  }
+}
+
