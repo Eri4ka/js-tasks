@@ -102,3 +102,22 @@ function prepend(value, list) {
   return {value, rest: list};
 }
 
+// 3
+let obj = {here: {is: "an"}, object: 2};
+
+function deepEqual(obj1, obj2) {
+  if (obj1 === obj2) {
+    return true
+  }
+
+  if (typeof obj1 === "object") {
+    for (let key in obj1) {
+      if (!deepEqual(obj1[key], obj2[key])) {
+        return false;
+      }
+    }
+    return true
+  }
+}
+
+
