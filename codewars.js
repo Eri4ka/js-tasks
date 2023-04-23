@@ -42,3 +42,38 @@ function findOutlier(arr) {
 
   return even.length > 1 ? +odd.join('') : +even.join('')
 }
+
+// duplicateEncode kata
+function duplicateEncode(word) {
+ return [...word.toLowerCase()].map((a, i, z) => {
+    if (z.filter(b => b === a).length > 1) {
+      return ')'
+    }
+    return '('
+  }).join('')
+}
+
+// findUniq kata
+function findUniq(arr) {
+  const duples = arr.filter((a, _, z) => a === z[0])
+  const unique = arr.filter((a, _, z) => a !== z[0])
+
+  return duples.length > 1 ? unique[0] : duples[0]
+}
+
+// KATA: Count characters in your string 
+function count(string) {
+  const obj = {};
+
+  [...string].forEach((a) => {
+    if (obj[a]) {
+      obj[a] += 1;
+    } else {
+      obj[a] = 1;
+    }
+    
+  })
+
+  return obj;
+}
+
