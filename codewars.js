@@ -34,3 +34,11 @@ const solution = (string) => {
 function isIsogram(str){
   return ![...str.toLowerCase()].map((a, i, z) => z.slice(0, i).includes(a.toLowerCase())).includes(true)
 }
+
+// findOutlier kata
+function findOutlier(arr) {
+  const even = arr.filter(a => a % 2 === 0)
+  const odd = arr.filter(a => a % 2 !== 0)
+
+  return even.length > 1 ? +odd.join('') : +even.join('')
+}
