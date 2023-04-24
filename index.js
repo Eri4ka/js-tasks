@@ -121,10 +121,26 @@ function deepEqual(obj1, obj2) {
 }
 
 // High order functions
+const ANCESTRY_FILE = require('./constants');
+const ancestry = JSON.parse(ANCESTRY_FILE);
 
 // 1
 function fill(arr) {
   return arr.reduce((acc, i) => acc.concat(i))
 }
 
+// 2
+const byName = {};
+ancestry.forEach(function(person) {
+  byName[person.name] = person;
+});
+
+var differences = ancestry.filter(function(person) {
+  return byName[person.mother] != null;
+}).map(function(person) {
+  console.log(person)
+  return person.born - byName[person.mother].born;
+});
+
+console.log(differences)
 
