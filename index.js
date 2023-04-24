@@ -120,4 +120,11 @@ function deepEqual(obj1, obj2) {
   }
 }
 
+// High order functions
+
+// 1
+function fill(arr) {
+  return arr.reduce((acc, i) => acc.concat(i))
+}
+
 
