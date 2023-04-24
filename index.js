@@ -169,3 +169,38 @@ for (var century in byCentury) {
   });
   console.log(century + ": " + average(ages));
 }
+
+// 4.1 every
+function every(arr, value) {
+  const checkedArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (value(arr[i])) {
+      checkedArr.push(arr[i])
+    }
+  }
+
+  if (arr.length === checkedArr.length) {
+    return true
+  }
+
+  return false;
+}
+
+// 4.2 some
+function some(arr, value) {
+  const checkedArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (value(arr[i])) {
+      checkedArr.push(arr[i])
+    }
+  }
+
+  if (checkedArr.length > 0) {
+    return true
+  }
+
+  return false;
+}
+
